@@ -269,6 +269,7 @@ def main():
             ax1.imshow(slice_ct, cmap='gray')
             ax1.axis('off')
             st.pyplot(fig1)
+            plt.close(fig1)
 
         with col2:
             st.markdown("**Segmented Lung Parenchyma Mask**")
@@ -276,6 +277,7 @@ def main():
             ax2.imshow(mask_ct, cmap='bone')
             ax2.axis('off')
             st.pyplot(fig2)
+            plt.close(fig2)
 
         with col3:
             st.markdown("**Extracted Lung ROI**")
@@ -283,6 +285,7 @@ def main():
             ax3.imshow(segmented_lung, cmap='gray')
             ax3.axis('off')
             st.pyplot(fig3)
+            plt.close(fig3)
 
     with tab2:
         st.subheader("Explainable AI (XAI) Nodule Localization")
@@ -298,6 +301,7 @@ def main():
             ax_cam.imshow(slice_cam, cmap='jet')
             ax_cam.axis('off')
             st.pyplot(fig_cam)
+            plt.close(fig_cam)
 
         with col_xai2:
             st.markdown(f"**Clinical CT Overlay (Alpha: {heatmap_alpha})**")
@@ -305,6 +309,7 @@ def main():
             ax_ov.imshow(overlay_img)
             ax_ov.axis('off')
             st.pyplot(fig_ov)
+            plt.close(fig_ov)
 
     with tab3:
         st.subheader("Clinical Decision Support & Self-Verification Output")
@@ -367,6 +372,7 @@ def main():
             ax_hist.set_xlabel("Predicted Malignancy Probability")
             ax_hist.set_ylabel("Count")
             st.pyplot(fig_hist)
+            plt.close(fig_hist)
 
         with col_unc2:
             st.markdown("**Uncertainty Metrics Decomposition**")

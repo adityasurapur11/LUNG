@@ -106,7 +106,7 @@ def overlay_heatmap_on_slice(ct_slice: np.ndarray, heatmap_slice: np.ndarray, al
         color_map_rgb = cv2.cvtColor(color_map, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
     else:
         # Use matplotlib colormap as fallback
-        cmap = cm.get_cmap('jet')
+        cmap = plt.get_cmap('jet')
         color_map_rgb = cmap(heatmap_norm)[:, :, :3]
     
     # Blended image
