@@ -3,9 +3,12 @@ Adaptive Self-Verifying Deep Learning Framework for Early Lung Cancer Detection
 Streamlit Clinical Decision Support System Interface
 """
 
+import sys
 import streamlit as st
 import numpy as np
 import torch
+# Fix Streamlit watcher compatibility issue with PyTorch 2.x torch.classes module
+sys.modules.pop('torch.classes', None)
 import cv2
 import matplotlib.pyplot as plt
 import io
